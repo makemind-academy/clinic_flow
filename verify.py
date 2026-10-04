@@ -30,7 +30,7 @@ ap.wait_text("Mark this step done")
 ap.wait_text("/ 6")
 ap.shot(f"{CAP}/01_routine.png")
 ap.tap("Mark this step done")
-ap.wait_text("2 / 6")
+ap.wait_text("3 / 6")                  # the step is marked: the count moves
 ap.expect_text("bp")                 # the next step names the readings it needs first
 ap.shot(f"{CAP}/02_step_done.png")
 ap.tap("Readings →")

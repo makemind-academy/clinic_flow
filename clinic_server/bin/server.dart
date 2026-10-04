@@ -177,6 +177,8 @@ class ClinicServer {
           'doneCount': _done.length,
           // "Next" is position in a list the clinician wrote. It is not advice.
           'next': _guard(next.label),
+          // What the screen sends back to mark it done: the step's id, never its words.
+          'nextId': next.id,
           'nextNeeds': next.needs.join(', '),
           'readings': _readings.entries
               .map((e) => {'id': e.key, ...e.value})

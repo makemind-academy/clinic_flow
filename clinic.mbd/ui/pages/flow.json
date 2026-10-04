@@ -17,130 +17,225 @@
       "nextNeeds": "",
       "readings": [],
       "toolRule": "",
-      "notice": ""
+      "notice": "",
+      "nextId": ""
     }
   },
   "content": {
-    "type": "container",
-    "decoration": {
-      "color": "{{theme.color.surfaceContainerHighest}}"
+    "type": "mediaQuery",
+    "condition": {
+      "minWidth": 600
     },
-    "child": {
-      "type": "linear",
-      "direction": "vertical",
-      "children": [
-        {
-          "type": "container",
-          "padding": {
-            "left": 22,
-            "right": 22,
-            "top": 20,
-            "bottom": 16
-          },
-          "decoration": {
-            "color": "{{theme.color.surface}}",
-            "border": {
-              "bottom": true,
-              "color": "{{theme.color.outline}}",
-              "width": 1
-            }
-          },
-          "child": {
-            "type": "linear",
-            "direction": "horizontal",
-            "crossAxisAlignment": "center",
-            "children": [
-              {
-                "type": "linear",
-                "direction": "vertical",
-                "children": [
-                  {
-                    "type": "text",
-                    "content": "ROOM 4 · TODAY'S ROUTINE",
-                    "style": {
-                      "fontSize": 12,
-                      "color": "{{theme.color.onSurfaceVariant}}",
-                      "letterSpacing": 2.0
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "content": "Examination",
-                    "style": {
-                      "fontSize": 21,
-                      "color": "{{theme.color.onSurface}}",
-                      "fontWeight": "bold"
-                    }
-                  }
-                ],
-                "gap": 4
-              },
-              {
-                "type": "spacer"
-              },
-              {
-                "type": "linear",
-                "direction": "vertical",
-                "children": [
-                  {
-                    "type": "text",
-                    "content": "DONE",
-                    "style": {
-                      "fontSize": 11,
-                      "color": "{{theme.color.onSurfaceVariant}}",
-                      "letterSpacing": 1.6
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "content": "{{doneCount}} / {{stepCount}}",
-                    "style": {
-                      "fontSize": 26,
-                      "color": "{{theme.color.onSurface}}",
-                      "fontFamily": "JetBrainsMono"
-                    }
-                  }
-                ],
-                "gap": 4,
-                "crossAxisAlignment": "end"
-              }
-            ]
-          }
-        },
-        {
-          "type": "container",
-          "padding": {
-            "left": 24,
-            "right": 24,
-            "top": 10,
-            "bottom": 4
-          },
-          "child": {
-            "type": "linear",
-            "direction": "horizontal",
-            "crossAxisAlignment": "center",
-            "children": [
-              {
-                "type": "button",
-                "label": "Readings →",
-                "variant": "outlined",
-                "onTap": {
-                  "type": "navigation",
-                  "action": "push",
-                  "route": "/readings"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "expanded",
-          "child": {
+    "then": {
+      "type": "container",
+      "decoration": {
+        "color": "{{theme.color.surfaceContainerHighest}}"
+      },
+      "child": {
+        "type": "linear",
+        "direction": "vertical",
+        "children": [
+          {
             "type": "container",
             "padding": {
               "left": 22,
               "right": 22,
-              "top": 16,
+              "top": 20,
+              "bottom": 16
+            },
+            "decoration": {
+              "color": "{{theme.color.surface}}",
+              "border": {
+                "bottom": true,
+                "color": "{{theme.color.outline}}",
+                "width": 1
+              }
+            },
+            "child": {
+              "type": "linear",
+              "direction": "horizontal",
+              "crossAxisAlignment": "center",
+              "children": [
+                {
+                  "type": "linear",
+                  "direction": "vertical",
+                  "children": [
+                    {
+                      "type": "text",
+                      "content": "ROOM 4 · TODAY'S ROUTINE",
+                      "style": {
+                        "fontSize": 12,
+                        "color": "{{theme.color.onSurfaceVariant}}",
+                        "letterSpacing": 2.0
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "content": "Examination",
+                      "style": {
+                        "fontSize": 21,
+                        "color": "{{theme.color.onSurface}}",
+                        "fontWeight": "bold"
+                      }
+                    }
+                  ],
+                  "gap": 4
+                },
+                {
+                  "type": "spacer"
+                },
+                {
+                  "type": "linear",
+                  "direction": "vertical",
+                  "children": [
+                    {
+                      "type": "text",
+                      "content": "DONE",
+                      "style": {
+                        "fontSize": 11,
+                        "color": "{{theme.color.onSurfaceVariant}}",
+                        "letterSpacing": 1.6
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "content": "{{doneCount}} / {{stepCount}}",
+                      "style": {
+                        "fontSize": 26,
+                        "color": "{{theme.color.onSurface}}",
+                        "fontFamily": "JetBrainsMono"
+                      }
+                    }
+                  ],
+                  "gap": 4,
+                  "crossAxisAlignment": "end"
+                }
+              ]
+            }
+          },
+          {
+            "type": "container",
+            "padding": {
+              "left": 24,
+              "right": 24,
+              "top": 10,
+              "bottom": 4
+            },
+            "child": {
+              "type": "linear",
+              "direction": "horizontal",
+              "crossAxisAlignment": "center",
+              "children": [
+                {
+                  "type": "button",
+                  "label": "Readings →",
+                  "variant": "outlined",
+                  "onTap": {
+                    "type": "navigation",
+                    "action": "push",
+                    "route": "/readings"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "expanded",
+            "child": {
+              "type": "container",
+              "padding": {
+                "left": 22,
+                "right": 22,
+                "top": 16,
+                "bottom": 8
+              },
+              "child": {
+                "type": "container",
+                "padding": {
+                  "all": 18
+                },
+                "decoration": {
+                  "color": "{{theme.color.surface}}",
+                  "borderRadius": 14,
+                  "border": {
+                    "color": "{{theme.color.outline}}",
+                    "width": 1
+                  }
+                },
+                "child": {
+                  "type": "list",
+                  "items": "{{steps}}",
+                  "shrinkWrap": true,
+                  "itemSpacing": 10,
+                  "emptyMessage": "No routine written for this room",
+                  "itemTemplate": {
+                    "type": "linear",
+                    "direction": "vertical",
+                    "children": [
+                      {
+                        "type": "linear",
+                        "direction": "horizontal",
+                        "crossAxisAlignment": "center",
+                        "children": [
+                          {
+                            "type": "expanded",
+                            "child": {
+                              "type": "text",
+                              "content": "{{item.label}}",
+                              "style": {
+                                "fontSize": 16,
+                                "color": "{{theme.color.onSurface}}"
+                              }
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "content": "{{item.needs}}",
+                            "style": {
+                              "fontSize": 13,
+                              "color": "{{theme.color.onSurfaceVariant}}",
+                              "fontFamily": "JetBrainsMono"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "linear",
+                        "direction": "horizontal",
+                        "crossAxisAlignment": "center",
+                        "children": [
+                          {
+                            "type": "container",
+                            "padding": {
+                              "left": 0,
+                              "right": 0,
+                              "top": 0,
+                              "bottom": 0
+                            },
+                            "child": {
+                              "type": "text",
+                              "content": "{{item.note}}",
+                              "style": {
+                                "fontSize": 12,
+                                "color": "{{theme.color.onSurfaceVariant}}"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "gap": 4
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "container",
+            "padding": {
+              "left": 22,
+              "right": 22,
+              "top": 0,
               "bottom": 8
             },
             "child": {
@@ -157,90 +252,134 @@
                 }
               },
               "child": {
-                "type": "list",
-                "items": "{{steps}}",
-                "shrinkWrap": true,
-                "itemSpacing": 10,
-                "emptyMessage": "No routine written for this room",
-                "itemTemplate": {
-                  "type": "linear",
-                  "direction": "vertical",
-                  "children": [
-                    {
-                      "type": "linear",
-                      "direction": "horizontal",
-                      "crossAxisAlignment": "center",
-                      "children": [
-                        {
-                          "type": "expanded",
-                          "child": {
-                            "type": "text",
-                            "content": "{{item.label}}",
-                            "style": {
-                              "fontSize": 16,
-                              "color": "{{theme.color.onSurface}}"
-                            }
-                          }
-                        },
-                        {
+                "type": "linear",
+                "direction": "vertical",
+                "children": [
+                  {
+                    "type": "linear",
+                    "direction": "horizontal",
+                    "crossAxisAlignment": "center",
+                    "children": [
+                      {
+                        "type": "text",
+                        "content": "NEXT IN THE LIST",
+                        "style": {
+                          "fontSize": 11,
+                          "color": "{{theme.color.onSurfaceVariant}}",
+                          "letterSpacing": 1.6
+                        }
+                      },
+                      {
+                        "type": "spacer"
+                      },
+                      {
+                        "type": "text",
+                        "content": "{{nextNeeds}}",
+                        "style": {
+                          "fontSize": 13,
+                          "color": "{{theme.color.onSurfaceVariant}}",
+                          "fontFamily": "JetBrainsMono"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "linear",
+                    "direction": "horizontal",
+                    "crossAxisAlignment": "center",
+                    "children": [
+                      {
+                        "type": "expanded",
+                        "child": {
                           "type": "text",
-                          "content": "{{item.needs}}",
+                          "content": "{{next}}",
                           "style": {
-                            "fontSize": 13,
-                            "color": "{{theme.color.onSurfaceVariant}}",
-                            "fontFamily": "JetBrainsMono"
+                            "fontSize": 17,
+                            "color": "{{theme.color.onSurface}}"
                           }
                         }
-                      ]
-                    },
-                    {
-                      "type": "linear",
-                      "direction": "horizontal",
-                      "crossAxisAlignment": "center",
-                      "children": [
-                        {
-                          "type": "container",
-                          "padding": {
-                            "left": 0,
-                            "right": 0,
-                            "top": 0,
-                            "bottom": 0
-                          },
-                          "child": {
-                            "type": "text",
-                            "content": "{{item.note}}",
-                            "style": {
-                              "fontSize": 12,
-                              "color": "{{theme.color.onSurfaceVariant}}"
-                            }
-                          }
-                        }
-                      ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "button",
+                    "label": "Mark this step done",
+                    "variant": "filled",
+                    "fullWidth": true,
+                    "onTap": {
+                      "type": "tool",
+                      "tool": "flow.done",
+                      "params": {
+                        "step": "{{nextId}}"
+                      }
                     }
-                  ],
-                  "gap": 4
-                }
+                  }
+                ],
+                "gap": 10
               }
             }
-          }
-        },
-        {
-          "type": "container",
-          "padding": {
-            "left": 22,
-            "right": 22,
-            "top": 0,
-            "bottom": 8
           },
-          "child": {
+          {
             "type": "container",
             "padding": {
-              "all": 18
+              "left": 22,
+              "right": 22,
+              "top": 4,
+              "bottom": 18
+            },
+            "child": {
+              "type": "linear",
+              "direction": "horizontal",
+              "crossAxisAlignment": "center",
+              "children": [
+                {
+                  "type": "expanded",
+                  "child": {
+                    "type": "text",
+                    "content": "{{toolRule}}",
+                    "style": {
+                      "fontSize": 13,
+                      "color": "{{theme.color.onSurfaceVariant}}"
+                    }
+                  }
+                },
+                {
+                  "type": "text",
+                  "content": "{{notice}}",
+                  "style": {
+                    "fontSize": 13,
+                    "color": "{{theme.color.primary}}"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "crossAxisAlignment": "stretch"
+      }
+    },
+    "else": {
+      "type": "container",
+      "decoration": {
+        "color": "{{theme.color.surfaceContainerHighest}}"
+      },
+      "child": {
+        "type": "linear",
+        "direction": "vertical",
+        "crossAxisAlignment": "stretch",
+        "children": [
+          {
+            "type": "container",
+            "padding": {
+              "left": 22,
+              "right": 22,
+              "top": 20,
+              "bottom": 16
             },
             "decoration": {
               "color": "{{theme.color.surface}}",
-              "borderRadius": 14,
               "border": {
+                "bottom": true,
                 "color": "{{theme.color.outline}}",
                 "width": 1
               }
@@ -248,15 +387,41 @@
             "child": {
               "type": "linear",
               "direction": "vertical",
+              "crossAxisAlignment": "start",
+              "spacing": 6,
               "children": [
                 {
                   "type": "linear",
-                  "direction": "horizontal",
-                  "crossAxisAlignment": "center",
+                  "direction": "vertical",
                   "children": [
                     {
                       "type": "text",
-                      "content": "NEXT IN THE LIST",
+                      "content": "ROOM 4 · TODAY'S ROUTINE",
+                      "style": {
+                        "fontSize": 12,
+                        "color": "{{theme.color.onSurfaceVariant}}",
+                        "letterSpacing": 2.0
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "content": "Examination",
+                      "style": {
+                        "fontSize": 21,
+                        "color": "{{theme.color.onSurface}}",
+                        "fontWeight": "bold"
+                      }
+                    }
+                  ],
+                  "gap": 4
+                },
+                {
+                  "type": "linear",
+                  "direction": "vertical",
+                  "children": [
+                    {
+                      "type": "text",
+                      "content": "DONE",
                       "style": {
                         "fontSize": 11,
                         "color": "{{theme.color.onSurfaceVariant}}",
@@ -264,92 +429,270 @@
                       }
                     },
                     {
-                      "type": "spacer"
-                    },
-                    {
                       "type": "text",
-                      "content": "{{nextNeeds}}",
+                      "content": "{{doneCount}} / {{stepCount}}",
                       "style": {
-                        "fontSize": 13,
-                        "color": "{{theme.color.onSurfaceVariant}}",
+                        "fontSize": 26,
+                        "color": "{{theme.color.onSurface}}",
                         "fontFamily": "JetBrainsMono"
                       }
                     }
-                  ]
-                },
+                  ],
+                  "gap": 4,
+                  "crossAxisAlignment": "end"
+                }
+              ]
+            }
+          },
+          {
+            "type": "expanded",
+            "child": {
+              "type": "scrollView",
+              "children": [
                 {
                   "type": "linear",
-                  "direction": "horizontal",
-                  "crossAxisAlignment": "center",
+                  "direction": "vertical",
+                  "crossAxisAlignment": "stretch",
                   "children": [
                     {
-                      "type": "expanded",
+                      "type": "container",
+                      "padding": {
+                        "left": 24,
+                        "right": 24,
+                        "top": 10,
+                        "bottom": 4
+                      },
                       "child": {
-                        "type": "text",
-                        "content": "{{next}}",
-                        "style": {
-                          "fontSize": 17,
-                          "color": "{{theme.color.onSurface}}"
+                        "type": "wrap",
+                        "spacing": 8,
+                        "runSpacing": 8,
+                        "children": [
+                          {
+                            "type": "button",
+                            "label": "Readings →",
+                            "variant": "outlined",
+                            "onTap": {
+                              "type": "navigation",
+                              "action": "push",
+                              "route": "/readings"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "container",
+                      "padding": {
+                        "left": 22,
+                        "right": 22,
+                        "top": 16,
+                        "bottom": 8
+                      },
+                      "child": {
+                        "type": "container",
+                        "padding": {
+                          "all": 18
+                        },
+                        "decoration": {
+                          "color": "{{theme.color.surface}}",
+                          "borderRadius": 14,
+                          "border": {
+                            "color": "{{theme.color.outline}}",
+                            "width": 1
+                          }
+                        },
+                        "child": {
+                          "type": "list",
+                          "items": "{{steps}}",
+                          "shrinkWrap": true,
+                          "itemSpacing": 10,
+                          "emptyMessage": "No routine written for this room",
+                          "itemTemplate": {
+                            "type": "linear",
+                            "direction": "vertical",
+                            "children": [
+                              {
+                                "type": "linear",
+                                "direction": "vertical",
+                                "crossAxisAlignment": "start",
+                                "spacing": 6,
+                                "children": [
+                                  {
+                                    "type": "text",
+                                    "content": "{{item.label}}",
+                                    "style": {
+                                      "fontSize": 16,
+                                      "color": "{{theme.color.onSurface}}"
+                                    }
+                                  },
+                                  {
+                                    "type": "text",
+                                    "content": "{{item.needs}}",
+                                    "style": {
+                                      "fontSize": 13,
+                                      "color": "{{theme.color.onSurfaceVariant}}",
+                                      "fontFamily": "JetBrainsMono"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "linear",
+                                "direction": "horizontal",
+                                "crossAxisAlignment": "center",
+                                "children": [
+                                  {
+                                    "type": "container",
+                                    "padding": {
+                                      "left": 0,
+                                      "right": 0,
+                                      "top": 0,
+                                      "bottom": 0
+                                    },
+                                    "child": {
+                                      "type": "text",
+                                      "content": "{{item.note}}",
+                                      "style": {
+                                        "fontSize": 12,
+                                        "color": "{{theme.color.onSurfaceVariant}}"
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            ],
+                            "gap": 4
+                          }
                         }
+                      }
+                    },
+                    {
+                      "type": "container",
+                      "padding": {
+                        "left": 22,
+                        "right": 22,
+                        "top": 0,
+                        "bottom": 8
+                      },
+                      "child": {
+                        "type": "container",
+                        "padding": {
+                          "all": 18
+                        },
+                        "decoration": {
+                          "color": "{{theme.color.surface}}",
+                          "borderRadius": 14,
+                          "border": {
+                            "color": "{{theme.color.outline}}",
+                            "width": 1
+                          }
+                        },
+                        "child": {
+                          "type": "linear",
+                          "direction": "vertical",
+                          "children": [
+                            {
+                              "type": "linear",
+                              "direction": "vertical",
+                              "crossAxisAlignment": "start",
+                              "spacing": 6,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "content": "NEXT IN THE LIST",
+                                  "style": {
+                                    "fontSize": 11,
+                                    "color": "{{theme.color.onSurfaceVariant}}",
+                                    "letterSpacing": 1.6
+                                  }
+                                },
+                                {
+                                  "type": "text",
+                                  "content": "{{nextNeeds}}",
+                                  "style": {
+                                    "fontSize": 13,
+                                    "color": "{{theme.color.onSurfaceVariant}}",
+                                    "fontFamily": "JetBrainsMono"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "linear",
+                              "direction": "horizontal",
+                              "crossAxisAlignment": "center",
+                              "children": [
+                                {
+                                  "type": "expanded",
+                                  "child": {
+                                    "type": "text",
+                                    "content": "{{next}}",
+                                    "style": {
+                                      "fontSize": 17,
+                                      "color": "{{theme.color.onSurface}}"
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "button",
+                              "label": "Mark this step done",
+                              "variant": "filled",
+                              "fullWidth": true,
+                              "onTap": {
+                                "type": "tool",
+                                "tool": "flow.done",
+                                "params": {
+                                  "step": "{{nextId}}"
+                                }
+                              }
+                            }
+                          ],
+                          "gap": 10
+                        }
+                      }
+                    },
+                    {
+                      "type": "container",
+                      "padding": {
+                        "left": 22,
+                        "right": 22,
+                        "top": 4,
+                        "bottom": 18
+                      },
+                      "child": {
+                        "type": "linear",
+                        "direction": "vertical",
+                        "crossAxisAlignment": "start",
+                        "spacing": 6,
+                        "children": [
+                          {
+                            "type": "text",
+                            "content": "{{toolRule}}",
+                            "style": {
+                              "fontSize": 13,
+                              "color": "{{theme.color.onSurfaceVariant}}"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "content": "{{notice}}",
+                            "style": {
+                              "fontSize": 13,
+                              "color": "{{theme.color.primary}}"
+                            }
+                          }
+                        ]
                       }
                     }
                   ]
-                },
-                {
-                  "type": "button",
-                  "label": "Mark this step done",
-                  "variant": "filled",
-                  "fullWidth": true,
-                  "onTap": {
-                    "type": "tool",
-                    "tool": "flow.done",
-                    "params": {
-                      "step": "{{next}}"
-                    }
-                  }
                 }
-              ],
-              "gap": 10
+              ]
             }
           }
-        },
-        {
-          "type": "container",
-          "padding": {
-            "left": 22,
-            "right": 22,
-            "top": 4,
-            "bottom": 18
-          },
-          "child": {
-            "type": "linear",
-            "direction": "horizontal",
-            "crossAxisAlignment": "center",
-            "children": [
-              {
-                "type": "expanded",
-                "child": {
-                  "type": "text",
-                  "content": "{{toolRule}}",
-                  "style": {
-                    "fontSize": 13,
-                    "color": "{{theme.color.onSurfaceVariant}}"
-                  }
-                }
-              },
-              {
-                "type": "text",
-                "content": "{{notice}}",
-                "style": {
-                  "fontSize": 13,
-                  "color": "{{theme.color.primary}}"
-                }
-              }
-            ]
-          }
-        }
-      ],
-      "crossAxisAlignment": "stretch"
+        ]
+      }
     }
   }
 }

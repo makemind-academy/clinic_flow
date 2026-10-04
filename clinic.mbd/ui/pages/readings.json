@@ -21,247 +21,534 @@
     }
   },
   "content": {
-    "type": "container",
-    "decoration": {
-      "color": "{{theme.color.surfaceContainerHighest}}"
+    "type": "mediaQuery",
+    "condition": {
+      "minWidth": 600
     },
-    "child": {
-      "type": "linear",
-      "direction": "vertical",
-      "children": [
-        {
-          "type": "container",
-          "padding": {
-            "left": 22,
-            "right": 22,
-            "top": 20,
-            "bottom": 16
-          },
-          "decoration": {
-            "color": "{{theme.color.surface}}",
-            "border": {
-              "bottom": true,
-              "color": "{{theme.color.outline}}",
-              "width": 1
-            }
-          },
-          "child": {
-            "type": "linear",
-            "direction": "horizontal",
-            "crossAxisAlignment": "center",
-            "children": [
-              {
-                "type": "linear",
-                "direction": "vertical",
-                "children": [
-                  {
-                    "type": "text",
-                    "content": "ROOM 4 · MEASURED TODAY",
-                    "style": {
-                      "fontSize": 12,
-                      "color": "{{theme.color.onSurfaceVariant}}",
-                      "letterSpacing": 2.0
-                    }
-                  },
-                  {
-                    "type": "text",
-                    "content": "Readings",
-                    "style": {
-                      "fontSize": 21,
-                      "color": "{{theme.color.onSurface}}",
-                      "fontWeight": "bold"
-                    }
-                  }
-                ],
-                "gap": 4
-              },
-              {
-                "type": "spacer"
-              }
-            ]
-          }
-        },
-        {
-          "type": "container",
-          "padding": {
-            "left": 24,
-            "right": 24,
-            "top": 10,
-            "bottom": 4
-          },
-          "child": {
-            "type": "linear",
-            "direction": "horizontal",
-            "crossAxisAlignment": "center",
-            "children": [
-              {
-                "type": "button",
-                "label": "← Routine",
-                "variant": "outlined",
-                "onTap": {
-                  "type": "navigation",
-                  "action": "pop"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "expanded",
-          "child": {
+    "then": {
+      "type": "container",
+      "decoration": {
+        "color": "{{theme.color.surfaceContainerHighest}}"
+      },
+      "child": {
+        "type": "linear",
+        "direction": "vertical",
+        "children": [
+          {
             "type": "container",
             "padding": {
               "left": 22,
               "right": 22,
-              "top": 16,
-              "bottom": 8
+              "top": 20,
+              "bottom": 16
             },
+            "decoration": {
+              "color": "{{theme.color.surface}}",
+              "border": {
+                "bottom": true,
+                "color": "{{theme.color.outline}}",
+                "width": 1
+              }
+            },
+            "child": {
+              "type": "linear",
+              "direction": "horizontal",
+              "crossAxisAlignment": "center",
+              "children": [
+                {
+                  "type": "linear",
+                  "direction": "vertical",
+                  "children": [
+                    {
+                      "type": "text",
+                      "content": "ROOM 4 · MEASURED TODAY",
+                      "style": {
+                        "fontSize": 12,
+                        "color": "{{theme.color.onSurfaceVariant}}",
+                        "letterSpacing": 2.0
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "content": "Readings",
+                      "style": {
+                        "fontSize": 21,
+                        "color": "{{theme.color.onSurface}}",
+                        "fontWeight": "bold"
+                      }
+                    }
+                  ],
+                  "gap": 4
+                },
+                {
+                  "type": "spacer"
+                }
+              ]
+            }
+          },
+          {
+            "type": "container",
+            "padding": {
+              "left": 24,
+              "right": 24,
+              "top": 10,
+              "bottom": 4
+            },
+            "child": {
+              "type": "linear",
+              "direction": "horizontal",
+              "crossAxisAlignment": "center",
+              "children": [
+                {
+                  "type": "button",
+                  "label": "← Routine",
+                  "variant": "outlined",
+                  "onTap": {
+                    "type": "navigation",
+                    "action": "pop"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "expanded",
             "child": {
               "type": "container",
               "padding": {
-                "all": 18
-              },
-              "decoration": {
-                "color": "{{theme.color.surface}}",
-                "borderRadius": 14,
-                "border": {
-                  "color": "{{theme.color.outline}}",
-                  "width": 1
-                }
+                "left": 22,
+                "right": 22,
+                "top": 16,
+                "bottom": 8
               },
               "child": {
-                "type": "list",
-                "items": "{{readings}}",
-                "shrinkWrap": true,
-                "itemSpacing": 10,
-                "emptyMessage": "Nothing measured yet",
-                "itemTemplate": {
+                "type": "container",
+                "padding": {
+                  "all": 18
+                },
+                "decoration": {
+                  "color": "{{theme.color.surface}}",
+                  "borderRadius": 14,
+                  "border": {
+                    "color": "{{theme.color.outline}}",
+                    "width": 1
+                  }
+                },
+                "child": {
+                  "type": "list",
+                  "items": "{{readings}}",
+                  "shrinkWrap": true,
+                  "itemSpacing": 10,
+                  "emptyMessage": "Nothing measured yet",
+                  "itemTemplate": {
+                    "type": "linear",
+                    "direction": "horizontal",
+                    "crossAxisAlignment": "center",
+                    "children": [
+                      {
+                        "type": "expanded",
+                        "child": {
+                          "type": "text",
+                          "content": "{{item.label}}",
+                          "style": {
+                            "fontSize": 16,
+                            "color": "{{theme.color.onSurface}}"
+                          }
+                        }
+                      },
+                      {
+                        "type": "container",
+                        "width": 80,
+                        "alignment": "centerEnd",
+                        "child": {
+                          "type": "text",
+                          "content": "{{item.value}}",
+                          "textAlign": "end",
+                          "maxLines": 1,
+                          "style": {
+                            "fontSize": 16,
+                            "color": "{{theme.color.onSurface}}",
+                            "textAlign": "end",
+                            "fontFamily": "JetBrainsMono"
+                          }
+                        }
+                      },
+                      {
+                        "type": "box",
+                        "width": 6
+                      },
+                      {
+                        "type": "container",
+                        "width": 64,
+                        "alignment": "centerStart",
+                        "child": {
+                          "type": "text",
+                          "content": "{{item.unit}}",
+                          "textAlign": "start",
+                          "maxLines": 1,
+                          "style": {
+                            "fontSize": 16,
+                            "color": "{{theme.color.onSurfaceVariant}}",
+                            "textAlign": "start",
+                            "fontFamily": "JetBrainsMono"
+                          }
+                        }
+                      },
+                      {
+                        "type": "box",
+                        "width": 24
+                      },
+                      {
+                        "type": "container",
+                        "width": 40,
+                        "alignment": "centerStart",
+                        "child": {
+                          "type": "text",
+                          "content": "usual",
+                          "textAlign": "start",
+                          "maxLines": 1,
+                          "style": {
+                            "fontSize": 13,
+                            "color": "{{theme.color.onSurfaceVariant}}",
+                            "textAlign": "start",
+                            "fontFamily": "JetBrainsMono"
+                          }
+                        }
+                      },
+                      {
+                        "type": "container",
+                        "width": 96,
+                        "alignment": "centerEnd",
+                        "child": {
+                          "type": "text",
+                          "content": "{{item.usual}}",
+                          "textAlign": "end",
+                          "maxLines": 1,
+                          "style": {
+                            "fontSize": 13,
+                            "color": "{{theme.color.onSurfaceVariant}}",
+                            "textAlign": "end",
+                            "fontFamily": "JetBrainsMono"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "container",
+            "padding": {
+              "left": 22,
+              "right": 22,
+              "top": 4,
+              "bottom": 18
+            },
+            "child": {
+              "type": "linear",
+              "direction": "horizontal",
+              "crossAxisAlignment": "center",
+              "children": [
+                {
+                  "type": "expanded",
+                  "child": {
+                    "type": "text",
+                    "content": "{{toolRule}}",
+                    "style": {
+                      "fontSize": 13,
+                      "color": "{{theme.color.onSurfaceVariant}}"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "crossAxisAlignment": "stretch"
+      }
+    },
+    "else": {
+      "type": "container",
+      "decoration": {
+        "color": "{{theme.color.surfaceContainerHighest}}"
+      },
+      "child": {
+        "type": "linear",
+        "direction": "vertical",
+        "crossAxisAlignment": "stretch",
+        "children": [
+          {
+            "type": "container",
+            "padding": {
+              "left": 22,
+              "right": 22,
+              "top": 20,
+              "bottom": 16
+            },
+            "decoration": {
+              "color": "{{theme.color.surface}}",
+              "border": {
+                "bottom": true,
+                "color": "{{theme.color.outline}}",
+                "width": 1
+              }
+            },
+            "child": {
+              "type": "linear",
+              "direction": "horizontal",
+              "crossAxisAlignment": "center",
+              "children": [
+                {
                   "type": "linear",
-                  "direction": "horizontal",
-                  "crossAxisAlignment": "center",
+                  "direction": "vertical",
                   "children": [
                     {
-                      "type": "expanded",
+                      "type": "text",
+                      "content": "ROOM 4 · MEASURED TODAY",
+                      "style": {
+                        "fontSize": 12,
+                        "color": "{{theme.color.onSurfaceVariant}}",
+                        "letterSpacing": 2.0
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "content": "Readings",
+                      "style": {
+                        "fontSize": 21,
+                        "color": "{{theme.color.onSurface}}",
+                        "fontWeight": "bold"
+                      }
+                    }
+                  ],
+                  "gap": 4
+                },
+                {
+                  "type": "spacer"
+                }
+              ]
+            }
+          },
+          {
+            "type": "expanded",
+            "child": {
+              "type": "scrollView",
+              "children": [
+                {
+                  "type": "linear",
+                  "direction": "vertical",
+                  "crossAxisAlignment": "stretch",
+                  "children": [
+                    {
+                      "type": "container",
+                      "padding": {
+                        "left": 24,
+                        "right": 24,
+                        "top": 10,
+                        "bottom": 4
+                      },
                       "child": {
-                        "type": "text",
-                        "content": "{{item.label}}",
-                        "style": {
-                          "fontSize": 16,
-                          "color": "{{theme.color.onSurface}}"
+                        "type": "wrap",
+                        "spacing": 8,
+                        "runSpacing": 8,
+                        "children": [
+                          {
+                            "type": "button",
+                            "label": "← Routine",
+                            "variant": "outlined",
+                            "onTap": {
+                              "type": "navigation",
+                              "action": "pop"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "container",
+                      "padding": {
+                        "left": 22,
+                        "right": 22,
+                        "top": 16,
+                        "bottom": 8
+                      },
+                      "child": {
+                        "type": "container",
+                        "padding": {
+                          "all": 18
+                        },
+                        "decoration": {
+                          "color": "{{theme.color.surface}}",
+                          "borderRadius": 14,
+                          "border": {
+                            "color": "{{theme.color.outline}}",
+                            "width": 1
+                          }
+                        },
+                        "child": {
+                          "type": "list",
+                          "items": "{{readings}}",
+                          "shrinkWrap": true,
+                          "itemSpacing": 10,
+                          "emptyMessage": "Nothing measured yet",
+                          "itemTemplate": {
+                            "type": "linear",
+                            "direction": "vertical",
+                            "crossAxisAlignment": "stretch",
+                            "spacing": 2,
+                            "children": [
+                              {
+                                "type": "linear",
+                                "direction": "horizontal",
+                                "crossAxisAlignment": "center",
+                                "children": [
+                                  {
+                                    "type": "expanded",
+                                    "child": {
+                                      "type": "text",
+                                      "content": "{{item.label}}",
+                                      "style": {
+                                        "fontSize": 16,
+                                        "color": "{{theme.color.onSurface}}"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "box",
+                                    "width": 8
+                                  },
+                                  {
+                                    "type": "container",
+                                    "width": 80,
+                                    "alignment": "centerEnd",
+                                    "child": {
+                                      "type": "text",
+                                      "content": "{{item.value}}",
+                                      "textAlign": "end",
+                                      "maxLines": 1,
+                                      "style": {
+                                        "fontSize": 16,
+                                        "color": "{{theme.color.onSurface}}",
+                                        "textAlign": "end",
+                                        "fontFamily": "JetBrainsMono"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "container",
+                                    "width": 64,
+                                    "alignment": "centerStart",
+                                    "child": {
+                                      "type": "text",
+                                      "content": "{{item.unit}}",
+                                      "textAlign": "start",
+                                      "maxLines": 1,
+                                      "style": {
+                                        "fontSize": 16,
+                                        "color": "{{theme.color.onSurfaceVariant}}",
+                                        "textAlign": "start",
+                                        "fontFamily": "JetBrainsMono"
+                                      }
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "linear",
+                                "direction": "horizontal",
+                                "crossAxisAlignment": "center",
+                                "children": [
+                                  {
+                                    "type": "expanded",
+                                    "child": {
+                                      "type": "wrap",
+                                      "spacing": 10,
+                                      "runSpacing": 2,
+                                      "children": [
+                                        {
+                                          "type": "container",
+                                          "child": {
+                                            "type": "text",
+                                            "content": "usual",
+                                            "textAlign": "start",
+                                            "maxLines": 1,
+                                            "style": {
+                                              "fontSize": 13,
+                                              "color": "{{theme.color.onSurfaceVariant}}",
+                                              "textAlign": "start",
+                                              "fontFamily": "JetBrainsMono"
+                                            }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "type": "wrap",
+                                    "spacing": 10,
+                                    "runSpacing": 2,
+                                    "children": [
+                                      {
+                                        "type": "container",
+                                        "width": 96,
+                                        "child": {
+                                          "type": "text",
+                                          "content": "{{item.usual}}",
+                                          "textAlign": "end",
+                                          "maxLines": 1,
+                                          "style": {
+                                            "fontSize": 13,
+                                            "color": "{{theme.color.onSurfaceVariant}}",
+                                            "textAlign": "end",
+                                            "fontFamily": "JetBrainsMono"
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
                         }
                       }
                     },
                     {
                       "type": "container",
-                      "width": 80,
-                      "alignment": "centerEnd",
+                      "padding": {
+                        "left": 22,
+                        "right": 22,
+                        "top": 4,
+                        "bottom": 18
+                      },
                       "child": {
-                        "type": "text",
-                        "content": "{{item.value}}",
-                        "textAlign": "end",
-                        "maxLines": 1,
-                        "style": {
-                          "fontSize": 16,
-                          "color": "{{theme.color.onSurface}}",
-                          "textAlign": "end",
-                          "fontFamily": "JetBrainsMono"
-                        }
-                      }
-                    },
-                    {
-                      "type": "box",
-                      "width": 6
-                    },
-                    {
-                      "type": "container",
-                      "width": 64,
-                      "alignment": "centerStart",
-                      "child": {
-                        "type": "text",
-                        "content": "{{item.unit}}",
-                        "textAlign": "start",
-                        "maxLines": 1,
-                        "style": {
-                          "fontSize": 16,
-                          "color": "{{theme.color.onSurfaceVariant}}",
-                          "textAlign": "start",
-                          "fontFamily": "JetBrainsMono"
-                        }
-                      }
-                    },
-                    {
-                      "type": "box",
-                      "width": 24
-                    },
-                    {
-                      "type": "container",
-                      "width": 40,
-                      "alignment": "centerStart",
-                      "child": {
-                        "type": "text",
-                        "content": "usual",
-                        "textAlign": "start",
-                        "maxLines": 1,
-                        "style": {
-                          "fontSize": 13,
-                          "color": "{{theme.color.onSurfaceVariant}}",
-                          "textAlign": "start",
-                          "fontFamily": "JetBrainsMono"
-                        }
-                      }
-                    },
-                    {
-                      "type": "container",
-                      "width": 96,
-                      "alignment": "centerEnd",
-                      "child": {
-                        "type": "text",
-                        "content": "{{item.usual}}",
-                        "textAlign": "end",
-                        "maxLines": 1,
-                        "style": {
-                          "fontSize": 13,
-                          "color": "{{theme.color.onSurfaceVariant}}",
-                          "textAlign": "end",
-                          "fontFamily": "JetBrainsMono"
-                        }
+                        "type": "linear",
+                        "direction": "horizontal",
+                        "crossAxisAlignment": "center",
+                        "children": [
+                          {
+                            "type": "expanded",
+                            "child": {
+                              "type": "text",
+                              "content": "{{toolRule}}",
+                              "style": {
+                                "fontSize": 13,
+                                "color": "{{theme.color.onSurfaceVariant}}"
+                              }
+                            }
+                          }
+                        ]
                       }
                     }
                   ]
                 }
-              }
+              ]
             }
           }
-        },
-        {
-          "type": "container",
-          "padding": {
-            "left": 22,
-            "right": 22,
-            "top": 4,
-            "bottom": 18
-          },
-          "child": {
-            "type": "linear",
-            "direction": "horizontal",
-            "crossAxisAlignment": "center",
-            "children": [
-              {
-                "type": "expanded",
-                "child": {
-                  "type": "text",
-                  "content": "{{toolRule}}",
-                  "style": {
-                    "fontSize": 13,
-                    "color": "{{theme.color.onSurfaceVariant}}"
-                  }
-                }
-              }
-            ]
-          }
-        }
-      ],
-      "crossAxisAlignment": "stretch"
+        ]
+      }
     }
   }
 }
